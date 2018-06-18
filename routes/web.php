@@ -12,7 +12,11 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('homepage');
+})->name('homepage');
+
+Route::get('/hero/{hero_slug}', 'HeroController@show');
+Route::get('/hero', 'HeroController@index');
+Route::post('/hero', 'HeroController@store');
 
 Auth::routes();
